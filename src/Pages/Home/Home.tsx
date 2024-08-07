@@ -1,4 +1,3 @@
-import React from 'react'
 import Produto from '../../Components/Produto/Produto'
 
 function Home() {
