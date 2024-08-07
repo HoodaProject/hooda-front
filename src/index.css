@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Docker-One";
+  src: url('./src/fonts/Docker-One/Docker One.ttf') format("opentype");
+  font-style: normal;
+  font-display: swap;
+}
