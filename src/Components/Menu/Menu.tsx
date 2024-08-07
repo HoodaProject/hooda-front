@@ -22,11 +22,6 @@ function Menu() {
                         </li>
                         <li className="p-3 xl:p-6">
                             <a href="">
-                                <span>Contato</span>
-                            </a>
-                        </li>
-                        <li className="p-3 xl:p-6">
-                            <a href="">
                                 <span>Sobre Nós</span>
                             </a>
                         </li>
