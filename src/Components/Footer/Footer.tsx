@@ -15,10 +15,10 @@ function Footer() {
                     </a>
                         <div className="flex flex-wrap justify-center -mx-3 lg:-mx-6">
                             <div className="w-full md:w-auto p-3 md:px-6"><a href="/terms"
-                                className="inline-block text-lg text-gray-500 hover:text-gray-600 font-medium">Home</a>
+                                className="inline-block text-lg text-gray-500 hover:text-gray-600 font-medium"><Link to="/home">Home</Link></a>
                             </div>
                             <div className="w-full md:w-auto p-3 md:px-6"><a href="/privacy"
-                                className="inline-block text-lg text-gray-500 hover:text-gray-600 font-medium">Sobre Nós</a>
+                                className="inline-block text-lg text-gray-500 hover:text-gray-600 font-medium"><Link to="/aboutus">Sobre Nós</Link></a>
                             </div>
                             <div className="w-full md:w-auto p-3 md:px-6"><a
                                 className="inline-block text-lg text-gray-500 hover:text-gray-600 font-medium" href="">Projeto</a>
