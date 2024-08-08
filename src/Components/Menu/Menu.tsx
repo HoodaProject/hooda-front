@@ -27,7 +27,7 @@ function Menu() {
             <li className="p-3 xl:p-6">
               <a href="">
                 <span>
-                  <Link to="/aboutus">Sobre Nós</Link>
+                  <Link to="/aboutus">Sobre</Link>
                 </span>
               </a>
             </li>
