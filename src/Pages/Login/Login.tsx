@@ -43,7 +43,7 @@ function login(e: ChangeEvent<HTMLFormElement>) {
                 <form onSubmit={login}>
                   <div className="mb-12">
                     <h3 className=" text-3xl font-Docker-One text-hoodaLaranja">Hooda</h3>
-                    <p className="text-sm mt-4 text-gray-800">Não tem conta? <Link to="/cadastro" className="text-black hover:text-hoodaLaranja font-semibold hover:underline ml-1 whitespace-nowrap">Cadastre-se</Link></p>
+                    <p className="text-sm mt-4 text-gray-800">Não tem conta? <Link to="/register" className="text-black hover:text-hoodaLaranja font-semibold hover:underline ml-1 whitespace-nowrap">Cadastre-se</Link></p>
                   </div>
     
                   <div>
