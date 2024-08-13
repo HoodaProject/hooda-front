@@ -153,7 +153,7 @@ let navigate = useNavigate()
                 </button>
                 <button
                   type="submit"
-                  className="w-full shadow-xl py-2.5 px-4 text-sm tracking-wide rounded-md text-white bg-indigo-400 hover:bg-indigo-900 focus:outline-none"
+                  className="w-full shadow-xl py-2.5 px-4 text-sm tracking-wide rounded-md text-white bg-hoodaLaranja hover:bg-amber-400 focus:outline-none"
                 >
                   Cadastrar
                 </button>
