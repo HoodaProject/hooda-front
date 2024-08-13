@@ -1,71 +1,71 @@
 import React, { ChangeEvent, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-// import Usuario from '../../models/Usuario'
+ import Usuario from '../../model/Usuario'
 import { cadastrarUsuario } from '../../services/Service'
-// import './register.'
+
 
     function Register() {
 
-// let navigate = useNavigate()
+let navigate = useNavigate()
 
-//   const [confirmaSenha, setConfirmaSenha] = useState<string>("")
+  const [confirmaSenha, setConfirmaSenha] = useState<string>("")
 
-//   const [usuario, setUsuario] = useState<Usuario>({
-//     id: 0,
-//     nome: '',
-//     usuario: '',
-//     senha: '',
-//     foto: ''
-//   })
+  const [usuario, setUsuario] = useState<Usuario>({
+    id: 0,
+    nome: '',
+    usuario: '',
+    senha: '',
+    foto: ''
+  })
 
-//   const [usuarioResposta, setUsuarioResposta] = useState<Usuario>({
-//     id: 0,
-//     nome: '',
-//     usuario: '',
-//     senha: '',
-//     foto: ''
-//   })
+  const [usuarioResposta, setUsuarioResposta] = useState<Usuario>({
+    id: 0,
+    nome: '',
+    usuario: '',
+    senha: '',
+    foto: ''
+  })
 
-//   useEffect(() => {
-//     if (usuarioResposta.id !== 0) {
-//       back()
-//     }
-//   }, [usuarioResposta])
+  useEffect(() => {
+    if (usuarioResposta.id !== 0) {
+      back()
+    }
+  }, [usuarioResposta])
 
-//   function back() {
-//     navigate('/login')
-//   }
+  function back() {
+    navigate('/login')
+  }
 
-//   function handleConfirmarSenha(e: ChangeEvent<HTMLInputElement>) {
-//     setConfirmaSenha(e.target.value)
-//   }
+  function handleConfirmarSenha(e: ChangeEvent<HTMLInputElement>) {
+    setConfirmaSenha(e.target.value)
+  }
 
-//   function atualizarEstado(e: ChangeEvent<HTMLInputElement>) {
-//     setUsuario({
-//       ...usuario,
-//       [e.target.name]: e.target.value
-//     })
-//   }
+  function atualizarEstado(e: ChangeEvent<HTMLInputElement>) {
+    setUsuario({
+      ...usuario,
+      [e.target.name]: e.target.value
+    })
+  }
 
-//   async function cadastrarNovoUsuario(e: ChangeEvent<HTMLFormElement>) {
-//     e.preventDefault()
+  async function cadastrarNovoUsuario(e: ChangeEvent<HTMLFormElement>) {
+    e.preventDefault()
 
-//     if (confirmaSenha === usuario.senha && usuario.senha.length >= 8) {
+    if (confirmaSenha === usuario.senha && usuario.senha.length >= 8) {
 
-//       try {
-//         await cadastrarUsuario(`/usuarios/cadastrar`, usuario, setUsuarioResposta)
-//         alert('Usuário cadastrado com sucesso')
+      try {
+        await cadastrarUsuario(`/usuarios/cadastrar`, usuario, setUsuarioResposta)
+        alert('Usuário cadastrado com sucesso')
 
-//       } catch (error) {
-//         alert('Erro ao cadastrar o Usuário')
-//       }
+      } catch (error) {
+        alert('Erro ao cadastrar o Usuário')
+      }
 
-//     } else {
-//       alert('Dados inconsistentes. Verifique as informações de cadastro.')
-//       setUsuario({ ...usuario, senha: "" }) 
-//       setConfirmaSenha("")                 
-//     }
-//   }
+    } else {
+      alert('Dados inconsistentes. Verifique as informações de cadastro.')
+      setUsuario({ ...usuario, senha: "" }) 
+      setConfirmaSenha("")                 
+    }
+  }
 
   return (
     <div className="font-[sans-serif]">
@@ -86,8 +86,8 @@ import { cadastrarUsuario } from '../../services/Service'
                   required
                   className="w-full text-gray-800 text-sm border-b border-gray-300 focus:border-blue-600 px-2 py-3 outline-none"
                   placeholder="Nome"
-                //   value={usuario.nome}
-                //   onChange={atualizarEstado}
+                   value={usuario.nome}
+                  onChange={atualizarEstado}
                 />
               </div>
 
@@ -99,8 +99,8 @@ import { cadastrarUsuario } from '../../services/Service'
                   required
                   className="w-full text-gray-800 text-sm border-b border-gray-300 focus:border-blue-600 px-2 py-3 outline-none"
                   placeholder="Usuário"
-                //   value={usuario.usuario}
-                //   onChange={atualizarEstado}
+                  value={usuario.usuario}
+                   onChange={atualizarEstado}
                 />
               </div>
 
@@ -112,8 +112,8 @@ import { cadastrarUsuario } from '../../services/Service'
                   required
                   className="w-full text-gray-800 text-sm border-b border-gray-300 focus:border-blue-600 px-2 py-3 outline-none"
                   placeholder="Foto"
-                //   value={usuario.foto}
-                //   onChange={atualizarEstado}
+                   value={usuario.foto}
+                   onChange={atualizarEstado}
                 />
               </div>
 
@@ -125,8 +125,8 @@ import { cadastrarUsuario } from '../../services/Service'
                   required
                   className="w-full text-gray-800 text-sm border-b border-gray-300 focus:border-blue-600 px-2 py-3 outline-none"
                   placeholder="Senha"
-                //   value={usuario.senha}
-                //   onChange={atualizarEstado}
+                   value={usuario.senha}
+                   onChange={atualizarEstado}
                 />
               </div>
 
@@ -138,8 +138,8 @@ import { cadastrarUsuario } from '../../services/Service'
                   required
                   className="w-full text-gray-800 text-sm border-b border-gray-300 focus:border-blue-600 px-2 py-3 outline-none"
                   placeholder="Confirmar Senha"
-                //   value={confirmaSenha}
-                //   onChange={handleConfirmarSenha}
+                   value={confirmaSenha}
+                   onChange={handleConfirmarSenha}
                 />
               </div>
 
@@ -147,7 +147,7 @@ import { cadastrarUsuario } from '../../services/Service'
                 <button
                   type="button"
                   className="w-full shadow-xl py-2.5 px-4 text-sm tracking-wide rounded-md text-white bg-red-400 hover:bg-red-700 focus:outline-none"
-                //   onClick={back}
+                   onClick={back}
                 >
                   Cancelar
                 </button>
