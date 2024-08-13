@@ -1,22 +1,57 @@
-import React from 'react'
+import React, { ChangeEvent, useContext, useEffect, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+
+import { AuthContext } from '../../contexts/AuthContext';
+import UsuarioLogin from '../../model/UsuarioLogin';
+import { RotatingLines } from 'react-loader-spinner';
 
 function Login() {
+
+  let navigate = useNavigate();
+
+  const [usuarioLogin, setUsuarioLogin] = useState<UsuarioLogin>(
+    {} as UsuarioLogin
+  );
+
+  const { usuario, handleLogin } = useContext(AuthContext);
+
+  const {isLoading} = useContext(AuthContext) 
+
+  useEffect(() => {
+    if (usuario.token !== "") {
+        navigate('/home')
+    }
+}, [usuario])
+
+function atualizarEstado(e: ChangeEvent<HTMLInputElement>) {
+  setUsuarioLogin({
+      ...usuarioLogin,
+      [e.target.name]: e.target.value
+  })
+}
+
+function login(e: ChangeEvent<HTMLFormElement>) {
+  e.preventDefault()
+  handleLogin(usuarioLogin)
+}
+
   return (
 
         <div className="font-[sans-serif]">
           <div className="min-h-screen flex flex-col items-center justify-center">
             <div className="grid md:grid-cols-2 items-center gap-4 max-md:gap-8 max-w-7xl max-md:max-w-lg w-full p-4 m-4 shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] rounded-md">
               <div className="md:max-w-md w-full px-4 py-4">
-                <form>
+                <form onSubmit={login}>
                   <div className="mb-12">
                     <h3 className=" text-3xl font-Docker-One text-hoodaLaranja">Hooda</h3>
-                    <p className="text-sm mt-4 text-gray-800">Não tem conta? <a href="javascript:void(0);" className="text-black hover:text-hoodaLaranja font-semibold hover:underline ml-1 whitespace-nowrap">Cadastre-se</a></p>
+                    <p className="text-sm mt-4 text-gray-800">Não tem conta? <Link to="/cadastro" className="text-black hover:text-hoodaLaranja font-semibold hover:underline ml-1 whitespace-nowrap">Cadastre-se</Link></p>
                   </div>
     
                   <div>
                     <label className="text-gray-800 text-xs block mb-2">Email</label>
                     <div className="relative flex items-center">
-                      <input name="email" type="text" required className="w-full text-gray-800 text-sm border-b border-gray-300 focus:border-blue-600 px-2 py-3 outline-none" placeholder="Seu email" />
+                      <input name="email" type="text" required className="w-full text-gray-800 text-sm border-b border-gray-300 focus:border-blue-600 px-2 py-3 outline-none" placeholder="Seu email" value={usuarioLogin.usuario} 
+              onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)} />
                       <svg xmlns="http://www.w3.org/2000/svg" fill="#bbb" stroke="#bbb" className="w-[18px] h-[18px] absolute right-2" viewBox="0 0 682.667 682.667">
                         <defs>
                           <clipPath id="a" clipPathUnits="userSpaceOnUse">
@@ -34,7 +69,8 @@ function Login() {
                   <div className="mt-8">
                     <label className="text-gray-800 text-xs block mb-2">Senha</label>
                     <div className="relative flex items-center">
-                      <input name="password" type="password" required className="w-full text-gray-800 text-sm border-b border-gray-300 focus:border-blue-600 px-2 py-3 outline-none" placeholder="Sua senha" />
+                      <input name="password" type="password" required className="w-full text-gray-800 text-sm border-b border-gray-300 focus:border-blue-600 px-2 py-3 outline-none" placeholder="Sua senha" value={usuarioLogin.senha} 
+              onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}/>
                       <svg xmlns="http://www.w3.org/2000/svg" fill="#bbb" stroke="#bbb" className="w-[18px] h-[18px] absolute right-2 cursor-pointer" viewBox="0 0 128 128">
                         <path d="M64 104C22.127 104 1.367 67.496.504 65.943a4 4 0 0 1 0-3.887C1.367 60.504 22.127 24 64 24s62.633 36.504 63.496 38.057a4 4 0 0 1 0 3.887C126.633 67.496 105.873 104 64 104zM8.707 63.994C13.465 71.205 32.146 96 64 96c31.955 0 50.553-24.775 55.293-31.994C114.535 56.795 95.854 32 64 32 32.045 32 13.447 56.775 8.707 63.994zM64 88c-13.234 0-24-10.766-24-24s10.766-24 24-24 24 10.766 24 24-10.766 24-24 24zm0-40c-8.822 0-16 7.178-16 16s7.178 16 16 16 16-7.178 16-16-7.178-16-16-16z" data-original="#000000"></path>
                       </svg>
@@ -56,8 +92,14 @@ function Login() {
                   </div>
     
                   <div className="mt-12">
-                    <button type="button" className="w-full shadow-xl py-2.5 px-4 text-sm tracking-wide rounded-md text-white bg-hoodaLaranja hover:bg-amber-400 focus:outline-none">
-                      Entrar
+                    <button type="submit" className="w-full shadow-xl py-2.5 px-4 text-sm tracking-wide rounded-md text-white bg-hoodaLaranja hover:bg-amber-400 focus:outline-none"> {isLoading ? <RotatingLines
+            strokeColor="white"
+            strokeWidth="5"
+            animationDuration="0.75"
+            width="24"
+            visible={true}
+          /> :
+                      <span>Entrar</span>}
                     </button>
                   </div>
     
