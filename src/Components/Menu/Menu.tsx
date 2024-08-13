@@ -34,9 +34,9 @@ function Menu() {
           </ul>
         </nav>
 
-        <button className="bg-hoodaLaranja hover:bg-amber-400 text-white font-bold px-4 xl:px-6 py-2 xl:py-3 rounded"><Link to="/login">
-          Login / Entrar
-          </Link></button>
+        <button className="bg-hoodaLaranja hover:bg-amber-400 text-white font-bold px-4 xl:px-6 py-2 xl:py-3 rounded">
+          <Link to="/login">Login / Entrar</Link>
+        </button>
       </header>
     </>
   );
