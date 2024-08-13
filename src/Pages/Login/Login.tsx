@@ -1,6 +1,29 @@
 import React from 'react'
 
 function Login() {
+
+  let navigate = useNavigate();
+
+  const [usuarioLogin, setUsuarioLogin] = useState<UsuarioLogin>(
+    {} as UsuarioLogin
+  );
+
+  const { usuario, handleLogin } = useContext(AuthContext);
+
+  const {isLoading} = useContext(AuthContext) 
+
+function atualizarEstado(e: ChangeEvent<HTMLInputElement>) {
+  setUsuarioLogin({
+      ...usuarioLogin,
+      [e.target.name]: e.target.value
+  })
+}
+
+function login(e: ChangeEvent<HTMLFormElement>) {
+  e.preventDefault()
+  handleLogin(usuarioLogin)
+}
+
   return (
 
         <div className="font-[sans-serif]">
