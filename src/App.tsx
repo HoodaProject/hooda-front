@@ -8,6 +8,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Login from "./Pages/Login/Login";
 import Register from "./Pages/Register/Register";
 import DeleteCategoria from "./Components/Categoria/DeleteCategoria"
+import FormularioCategoria from "./Components/Categoria/formularioCategoria/FormularioCategoria";
 
 function App() {
   return (
@@ -23,6 +24,8 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />-
             {/* <Route path="/delete/:id" element={< DeleteCategoria />} /> */}
+            <Route path="/cadastroCategoria" element={<FormularioCategoria />} />
+            <Route path="/editarCategoria/:id" element={<FormularioCategoria />} />
           </Routes>
         </div>
         <Footer />
