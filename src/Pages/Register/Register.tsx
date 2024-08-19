@@ -2,7 +2,7 @@ import React, { ChangeEvent, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
  import Usuario from '../../model/Usuario'
 import { cadastrarUsuario } from '../../services/Service'
-
+import { Link } from 'react-router-dom';
 
     function Register() {
 
@@ -72,10 +72,14 @@ let navigate = useNavigate()
       <div className="min-h-screen flex flex-col items-center justify-center">
         <div className="grid md:grid-cols-2 items-center gap-4 max-md:gap-8 max-w-7xl max-md:max-w-lg w-full p-4 m-4 shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] rounded-md">
           <div className="md:max-w-md w-full px-4 py-4">
+<<<<<<< HEAD
           <form className='flex justify-center items-center flex-col w-2/3 gap-3' onSubmit={cadastrarNovoUsuario}>
+=======
+            <form onSubmit={cadastrarNovoUsuario}>
+>>>>>>> 46f568b080c981de2de28e9edb9cce176f066978
               <div className="mb-12">
                 <h3 className="text-3xl font-Docker-One text-hoodaLaranja">Cadastrar</h3>
-                <p className="text-sm mt-4 text-gray-800">Já tem uma conta? <a href="/login" className="text-black hover:text-hoodaLaranja font-semibold hover:underline ml-1 whitespace-nowrap">Faça login</a></p>
+                <p className="text-sm mt-4 text-gray-800">Já tem uma conta? <Link to="/login" className="text-black hover:text-hoodaLaranja font-semibold hover:underline ml-1 whitespace-nowrap">Faça login</Link></p>
               </div>
 
               <div>
@@ -153,7 +157,7 @@ let navigate = useNavigate()
                 </button>
                 <button
                   type="submit"
-                  className="w-full shadow-xl py-2.5 px-4 text-sm tracking-wide rounded-md text-white bg-indigo-400 hover:bg-indigo-900 focus:outline-none"
+                  className="w-full shadow-xl py-2.5 px-4 text-sm tracking-wide rounded-md text-white bg-hoodaLaranja hover:bg-amber-400 focus:outline-none"
                 >
                   Cadastrar
                 </button>
