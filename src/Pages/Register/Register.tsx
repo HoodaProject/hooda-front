@@ -72,7 +72,7 @@ let navigate = useNavigate()
       <div className="min-h-screen flex flex-col items-center justify-center">
         <div className="grid md:grid-cols-2 items-center gap-4 max-md:gap-8 max-w-7xl max-md:max-w-lg w-full p-4 m-4 shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] rounded-md">
           <div className="md:max-w-md w-full px-4 py-4">
-            <form>
+          <form className='flex justify-center items-center flex-col w-2/3 gap-3' onSubmit={cadastrarNovoUsuario}>
               <div className="mb-12">
                 <h3 className="text-3xl font-Docker-One text-hoodaLaranja">Cadastrar</h3>
                 <p className="text-sm mt-4 text-gray-800">Já tem uma conta? <a href="/login" className="text-black hover:text-hoodaLaranja font-semibold hover:underline ml-1 whitespace-nowrap">Faça login</a></p>
@@ -86,8 +86,8 @@ let navigate = useNavigate()
                   required
                   className="w-full text-gray-800 text-sm border-b border-gray-300 focus:border-blue-600 px-2 py-3 outline-none"
                   placeholder="Nome"
-                   value={usuario.nome}
-                  onChange={atualizarEstado}
+                  value={usuario.nome} 
+                  onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                 />
               </div>
 
@@ -99,8 +99,8 @@ let navigate = useNavigate()
                   required
                   className="w-full text-gray-800 text-sm border-b border-gray-300 focus:border-blue-600 px-2 py-3 outline-none"
                   placeholder="Usuário"
-                  value={usuario.usuario}
-                   onChange={atualizarEstado}
+                  value={usuario.usuario} 
+                  onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                 />
               </div>
 
@@ -112,8 +112,8 @@ let navigate = useNavigate()
                   required
                   className="w-full text-gray-800 text-sm border-b border-gray-300 focus:border-blue-600 px-2 py-3 outline-none"
                   placeholder="Foto"
-                   value={usuario.foto}
-                   onChange={atualizarEstado}
+                  value={usuario.foto} 
+                  onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                 />
               </div>
 
@@ -125,8 +125,8 @@ let navigate = useNavigate()
                   required
                   className="w-full text-gray-800 text-sm border-b border-gray-300 focus:border-blue-600 px-2 py-3 outline-none"
                   placeholder="Senha"
-                   value={usuario.senha}
-                   onChange={atualizarEstado}
+                  value={usuario.senha} 
+                  onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                 />
               </div>
 
@@ -138,8 +138,8 @@ let navigate = useNavigate()
                   required
                   className="w-full text-gray-800 text-sm border-b border-gray-300 focus:border-blue-600 px-2 py-3 outline-none"
                   placeholder="Confirmar Senha"
-                   value={confirmaSenha}
-                   onChange={handleConfirmarSenha}
+                  value={confirmaSenha}
+                  onChange={(e: ChangeEvent<HTMLInputElement>) => handleConfirmarSenha(e)}
                 />
               </div>
 

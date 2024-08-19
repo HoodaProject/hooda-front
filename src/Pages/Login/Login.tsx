@@ -16,12 +16,6 @@ function Login() {
 
   const {isLoading} = useContext(AuthContext) 
 
-  useEffect(() => {
-    if (usuario.token !== "") {
-        navigate('/home')
-    }
-}, [usuario])
-
 function atualizarEstado(e: ChangeEvent<HTMLInputElement>) {
   setUsuarioLogin({
       ...usuarioLogin,
