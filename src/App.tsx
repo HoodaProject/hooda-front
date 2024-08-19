@@ -22,7 +22,7 @@ function App() {
             <Route path="/aboutus" element={<AboutUs />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />-
-            <Route path="/delete/:id" element={< DeleteCategoria />} />
+            {/* <Route path="/delete/:id" element={< DeleteCategoria />} /> */}
           </Routes>
         </div>
         <Footer />
