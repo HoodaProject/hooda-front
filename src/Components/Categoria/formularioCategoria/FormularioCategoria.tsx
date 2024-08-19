@@ -11,14 +11,14 @@ function FormularioCategoria() {
 
   const { id } = useParams<{ id: string }>();
 
-  const { usuario, handleLogout } = useContext(AuthContext);
-  const token = usuario.token;
+   const { usuario, handleLogout } = useContext(AuthContext);
+   const token = usuario.token;
 
   async function buscarPorId(id: string) {
     await buscar(`/categorias/${id}`, setCategoria, {
-      headers: {
-        Authorization: token,
-      },
+       headers: {
+         Authorization: token,
+       },
     });
   }
 
@@ -43,41 +43,41 @@ function FormularioCategoria() {
     if (id !== undefined) {
       try {
         await atualizar(`/categorias`, categoria, setCategoria, {
-          headers: {
-            'Authorization': token
-          }
+           headers: {
+             'Authorization': token
+           }
         })
 
         alert('Categoria atualizada com sucesso')
         retornar()
 
       } catch (error: any) {
-        if (error.toString().includes('403')) {
-          alert('O token expirou, favor logar novamente')
-          handleLogout()
-        } else {
-          alert('Erro ao atualizar a Categoria')
-        }
+         if (error.toString().includes('403')) {
+           alert('O token expirou, favor logar novamente')
+           handleLogout()
+         } else {
+           alert('Erro ao atualizar a Categoria')
+         }
 
       }
 
     } else {
       try {
         await cadastrar(`/categorias`, categoria, setCategoria, {
-          headers: {
+           headers: {
             'Authorization': token
-          }
+           }
         })
 
         alert('Categoria cadastrada com sucesso')
 
       } catch (error: any) {
-        if (error.toString().includes('403')) {
-          alert('O token expirou, favor logar novamente')
-          handleLogout()
-        } else {
+         if (error.toString().includes('403')) {
+           alert('O token expirou, favor logar novamente')
+           handleLogout()
+         } else {
           alert('Erro ao cadastrar a Categoria')
-        }
+         }
       }
     }
 
@@ -103,6 +103,17 @@ function FormularioCategoria() {
 
       <form className="w-1/2 flex flex-col gap-4" onSubmit={gerarNovaCategoria}>
         <div className="flex flex-col gap-2">
+          <label htmlFor="nome">Nome da categoria</label>
+          <input
+            type="text"
+            placeholder="Nome"
+            name='nome'
+            className="border-2 border-slate-700 rounded p-2"
+            value={categoria.nome}
+            onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+          />
+        </div>
+        <div className="flex flex-col gap-2">
           <label htmlFor="descricao">Descrição da categoria</label>
           <input
             type="text"
@@ -114,7 +125,7 @@ function FormularioCategoria() {
           />
         </div>
         <button
-          className="rounded text-slate-100 bg-indigo-400 hover:bg-indigo-800 w-1/2 py-2 mx-auto block"
+          className="rounded text-slate-100 bg-hoodaLaranja hover:bg-amber-400 w-1/2 py-2 mx-auto block"
           type="submit"
         >
           {id === undefined ? 'Cadastrar' : 'Editar'}
