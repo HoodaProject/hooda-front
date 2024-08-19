@@ -86,8 +86,8 @@ let navigate = useNavigate()
                   required
                   className="w-full text-gray-800 text-sm border-b border-gray-300 focus:border-blue-600 px-2 py-3 outline-none"
                   placeholder="Nome"
-                   value={usuario.nome}
-                  onChange={atualizarEstado}
+                  value={usuario.nome} 
+                  onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                 />
               </div>
 
@@ -99,8 +99,8 @@ let navigate = useNavigate()
                   required
                   className="w-full text-gray-800 text-sm border-b border-gray-300 focus:border-blue-600 px-2 py-3 outline-none"
                   placeholder="Usuário"
-                  value={usuario.usuario}
-                   onChange={atualizarEstado}
+                  value={usuario.usuario} 
+                  onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                 />
               </div>
 
@@ -112,8 +112,8 @@ let navigate = useNavigate()
                   required
                   className="w-full text-gray-800 text-sm border-b border-gray-300 focus:border-blue-600 px-2 py-3 outline-none"
                   placeholder="Foto"
-                   value={usuario.foto}
-                   onChange={atualizarEstado}
+                  value={usuario.foto} 
+                  onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                 />
               </div>
 
@@ -125,8 +125,8 @@ let navigate = useNavigate()
                   required
                   className="w-full text-gray-800 text-sm border-b border-gray-300 focus:border-blue-600 px-2 py-3 outline-none"
                   placeholder="Senha"
-                   value={usuario.senha}
-                   onChange={atualizarEstado}
+                  value={usuario.senha} 
+                  onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                 />
               </div>
 
@@ -138,8 +138,8 @@ let navigate = useNavigate()
                   required
                   className="w-full text-gray-800 text-sm border-b border-gray-300 focus:border-blue-600 px-2 py-3 outline-none"
                   placeholder="Confirmar Senha"
-                   value={confirmaSenha}
-                   onChange={handleConfirmarSenha}
+                  value={confirmaSenha}
+                  onChange={(e: ChangeEvent<HTMLInputElement>) => handleConfirmarSenha(e)}
                 />
               </div>
 
