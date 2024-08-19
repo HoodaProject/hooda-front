@@ -65,10 +65,17 @@ function Menu() {
                 </Link>
               </li>
               <li>
-                <Link to={"/"}
+                <Link to={"/categorias"}
                   className="block py-2 pl-3 pr-4 text-white bg-amber-900 rounded lg:bg-transparent lg:text-purple-700 lg:p-0 dark:text-black dark:hover:text-white" 
                   aria-current="page"
-                > Digitar aqui
+                > Categorias
+                </Link>
+              </li>
+              <li>
+                <Link to={"/cadastroCategorias"}
+                  className="block py-2 pl-3 pr-4 text-white bg-amber-900 rounded lg:bg-transparent lg:text-purple-700 lg:p-0 dark:text-black dark:hover:text-white" 
+                  aria-current="page"
+                > Cadastrar categorias
                 </Link>
               </li>
             </ul>
