@@ -1,22 +1,30 @@
+import Carousel from '../../Components/Carrosel/Carrosel'
 import Produto from '../../Components/Produto/Produto'
 
 function Home() {
         return (
 
-                <div className=' border-red-500 border-4 grid grid-cols-12 '>
-                        <div className=' border-blue-600 border-4 col-span-12 row-span-2'>
-                                casa
+                <div className=' grid grid-cols-12 '>
+                        <div className=' min-h-[0vh] max-h-[50vh] py-2 flex items-center col-span-12 p-0 m-0'>
+                        <Carousel />
                         </div>
+                        <div className='text-hoodaLaranja text-3xl text-center col-span-2'>
+                                Categorias
 
-                        <div className=' border-purple-600 border-4 col-span-12 grid grid-cols-12 row-span-3'>
-                        <div className=' border-yellow-500 border-2 col-span-2'>
-
-                                casa2
+                                <ul className='text-black text-2xl p-2 m-2'>
+                                        <li className='p-1 m-1 hover:text-hoodaLaranja hover:underline'> Lorem</li>
+                                        <li className='p-1 m-1 hover:text-hoodaLaranja hover:underline'> Lorem</li>
+                                        <li className='p-1 m-1 hover:text-hoodaLaranja hover:underline'> Lorem</li>
+                                        <li className='p-1 m-1 hover:text-hoodaLaranja hover:underline'> Lorem</li>
+                                        <li className='p-1 m-1 hover:text-hoodaLaranja hover:underline'> Lorem</li>
+                                        <li className='p-1 m-1 hover:text-hoodaLaranja hover:underline'> Lorem</li>
+                                        
+                                </ul>
                         </div>
-
-
-                        <div className='col-span-10 border-2 border-black '>
-                                <div className='flex flex-row'>
+                        
+                        <div className='col-span-10 '>
+                                <div>
+                                <div className='flex flex-row flex-wrap justify-evenly py-2 px-0'>
 
                                         <Produto
                                                 src='https://img.freepik.com/fotos-gratis/saco-de-copia-espaco-com-pecas-de-talheres-dos-desenhos-animados_23-2148576701.jpg?w=826&t=st=1723054417~exp=1723055017~hmac=a764a5b3b94b5fd77d887a98fa03e486a1fa4da4a0dc27f5c86d180a70c2fb65'
@@ -192,8 +200,15 @@ function Home() {
 
 
                                 </div>
-                        </div>
+                                <p className='font-Docker-One text-hoodaLaranja flex justify-center'>Paginas</p>
 
+                                        <ul className='flex justify-center'>
+                                                <li className=' hover:text-hoodaLaranja hover:underline p-1'> 1 </li>
+                                                <li className=' hover:text-hoodaLaranja hover:underline p-1'> 2 </li>
+                                                <li className=' hover:text-hoodaLaranja hover:underline p-1'> 3 </li>
+                                                <li className=' hover:text-hoodaLaranja hover:underline p-1'> 4 </li>
+                                        </ul>
+                                </div>
                         </div>
 
                 </div>
