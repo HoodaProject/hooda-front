@@ -134,7 +134,7 @@ function Login() {
                       data-original="#000000"
                     ></path>
                   </svg>
-                </div>
+git             </div>
               </div>
 
               <div className="flex flex-wrap items-center justify-between gap-4 mt-6">
