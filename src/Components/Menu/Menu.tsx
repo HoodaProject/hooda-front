@@ -78,6 +78,20 @@ function Menu() {
                 > Cadastrar categorias
                 </Link>
               </li>
+              <li>
+                <Link to={"/produtos"}
+                  className="block py-2 pl-3 pr-4 text-white bg-amber-900 rounded lg:bg-transparent lg:text-purple-700 lg:p-0 dark:text-black dark:hover:text-white" 
+                  aria-current="page"
+                > Produto
+                </Link>
+              </li>
+              <li>
+                <Link to={"/cadastroProduto"}
+                  className="block py-2 pl-3 pr-4 text-white bg-amber-900 rounded lg:bg-transparent lg:text-purple-700 lg:p-0 dark:text-black dark:hover:text-white" 
+                  aria-current="page"
+                > Cadastrar produto
+                </Link>
+              </li>
             </ul>
           </div>
         </div>

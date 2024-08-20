@@ -49,7 +49,7 @@ function FormularioCategoria() {
            }
         })
 
-        toastAlerta('Categoria atualizada com sucesso','sucesso')
+        toastAlerta('Categoria atualizado com sucesso','sucesso')
         retornar()
 
       } catch (error: any) {
