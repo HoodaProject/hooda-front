@@ -32,7 +32,7 @@ function CardCategoria({categoria}: CardCategoriaProps) {
     <div className="relative flex flex-col mt-6 text-gray-700 bg-white shadow-md bg-clip-border rounded-xl w-96">
   <div className="p-6">
   <h3 className='text-lg font-bold text-center uppercase m-7'>{categoria.nome}</h3>
-  <p>{categoria.descricao}</p>
+  <p className='flex justify-center'>{categoria.descricao}</p>
   </div>
   <div className="p-6 pt-0 flex justify-evenly">
   <Link to={`/editarCategoria/${categoria.id}`}>
