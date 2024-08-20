@@ -48,7 +48,7 @@ function CardProduto({ produto }: CardProdutoProps) {
       </div>
       <div className='p-4 '>
         <div className="mb-2 flex items-center justify-between text-xl">
-          <p className="text-hoodaLaranja font-medium">{produto.descricao}</p>
+          <p className="text-hoodaLaranja font-medium">{produto.nome}</p>
         </div>
         <div className="mb-2 flex items-center justify-between text-xl">
           <p className="text-hoodaLaranja font-medium">R$ {produto.preco.toFixed(2)}</p>
