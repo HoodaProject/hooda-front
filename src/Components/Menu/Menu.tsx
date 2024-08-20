@@ -41,9 +41,10 @@ function Menu() {
               </svg>
             </button>
             <div>
-              <img src="https://i.imgur.com/pTCHwra.png"
+              <Link to={"/cart"}><img src="https://i.imgur.com/pTCHwra.png"
                 className="h-4 mr- sm:h-6 m-3" 
                 alt="Logo Carrinho"></img>
+              </Link>
             </div>
           </div>
           <div className="hidden lg:flex lg:w-auto lg:order-1" id="mobile-menu-2">
@@ -76,6 +77,20 @@ function Menu() {
                   className="block py-2 pl-3 pr-4 text-white bg-amber-900 rounded lg:bg-transparent lg:text-purple-700 lg:p-0 dark:text-black dark:hover:text-white" 
                   aria-current="page"
                 > Cadastrar categorias
+                </Link>
+              </li>
+              <li>
+                <Link to={"/produtos"}
+                  className="block py-2 pl-3 pr-4 text-white bg-amber-900 rounded lg:bg-transparent lg:text-purple-700 lg:p-0 dark:text-black dark:hover:text-white" 
+                  aria-current="page"
+                > Produto
+                </Link>
+              </li>
+              <li>
+                <Link to={"/cadastroProduto"}
+                  className="block py-2 pl-3 pr-4 text-white bg-amber-900 rounded lg:bg-transparent lg:text-purple-700 lg:p-0 dark:text-black dark:hover:text-white" 
+                  aria-current="page"
+                > Cadastrar produto
                 </Link>
               </li>
             </ul>
