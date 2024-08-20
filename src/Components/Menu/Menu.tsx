@@ -41,9 +41,10 @@ function Menu() {
               </svg>
             </button>
             <div>
-              <img src="https://i.imgur.com/pTCHwra.png"
+              <Link to={"/cart"}><img src="https://i.imgur.com/pTCHwra.png"
                 className="h-4 mr- sm:h-6 m-3" 
                 alt="Logo Carrinho"></img>
+              </Link>
             </div>
           </div>
           <div className="hidden lg:flex lg:w-auto lg:order-1" id="mobile-menu-2">
