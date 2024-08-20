@@ -1,10 +1,7 @@
 import React, { useState } from 'react';
 import '@fortawesome/fontawesome-free/css/all.min.css'; // Importando Font Awesome
 import 'tailwindcss/tailwind.css'; // Importando Tailwind CSS
-//import imagem1 from '../../assets/imagem1.jpg' ;
-//import imagem2 from '../../assets/imagem1.jpg' ;
-//import imagem3 from '../../assets/imagem1.jpg' ;
-//import imagem4 from '../../assets/imagem1.jpg' ;
+
 
 interface CarouselItem {
   src: string;
