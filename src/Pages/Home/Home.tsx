@@ -1,12 +1,13 @@
-import Carousel from '../../Components/Carrosel/Carrosel'
+//import Carousel from '../../Components/Carrosel/Carrosel'
+import Carrosel2 from '../../Components/Carrosel2/Carrosel2'
 import Produto from '../../Components/Produto/Produto'
 
 function Home() {
         return (
 
-                <div className=' grid grid-cols-12 '>
-                        <div className=' min-h-[0vh] max-h-[50vh] py-2 flex items-center col-span-12 p-0 m-0'>
-                        <Carousel />
+                <div className='grid grid-cols-12'>
+                        <div className='min-h-[0vh] max-h-[60vh] max-md:hidden py-5 flex items-center col-span-12 p-0 m-0'>
+                        <Carrosel2 />
                         </div>
                         <div className='text-hoodaLaranja text-3xl text-center col-span-2'>
                                 Categorias
