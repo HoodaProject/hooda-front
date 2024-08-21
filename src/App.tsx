@@ -23,7 +23,7 @@ function App() {
     <ToastContainer />
      <AuthProvider>
       <BrowserRouter>
-        <Menu />
+        <Menu/>
         <div className="min-h-[80vh]">
           <Routes>
             <Route path="/" element={<Home />} />

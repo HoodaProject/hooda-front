@@ -38,7 +38,7 @@ function Menu() {
             <button className="text-white font-d text-1xl hover:bg-amber-400 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg px-4 py-2 lg:px-5 lg:py-2.5  dark:focus:ring-purple-800"
             > {token === '' ? <Link to='/login'><button>Entrar</button></Link> : <button onClick={handleLogout}>Sair</button>}
             </button>
-             
+
             <button
               data-collapse-toggle="mobile-menu-2"
               type="button"
@@ -62,27 +62,6 @@ function Menu() {
               </Link>
             </div>
           </div>
-
-
-          <div className="relative inline-block text-left">
-      <button
-        onClick={toggleDropdown}
-        className="bg-[rgb(254,147,4)] text-white px-4 py-2 rounded hover:bg-orange-600 focus:outline-none"
-      >
-        Menu
-      </button>
-      {isOpen && (
-        <div className="absolute right-0 mt-2 w-48 bg-white border border-gray-300 rounded shadow-lg">
-          <button className="block px-4 py-2 text-left w-full hover:bg-gray-100">Item 1</button>
-          <button className="block px-4 py-2 text-left w-full hover:bg-gray-100">Item 2</button>
-          <button className="block px-4 py-2 text-left w-full hover:bg-gray-100">Item 3</button>
-        </div>
-      )}
-    </div>
-
-
-        
-
           <div className="hidden lg:flex lg:w-auto lg:order-1" id="mobile-menu-2">
             <ul className="flex flex-col mt-4 lg:flex-row lg:space-x-8 lg:mt-0 font-medium">
               <li>
@@ -109,13 +88,6 @@ function Menu() {
                 </Link>
               </li>
               <li>
-                <Link to={"/cadastroCategoria"}
-                  className="block py-2 pl-3 pr-4 bg-amber-900 rounded lg:bg-transparent text-black hover:text-white"
-                  aria-current="page"
-                > Cadastrar categorias
-                </Link>
-              </li>
-              <li>
                 <Link to={"/produtos"}
                   className="block py-2 pl-3 pr-4 bg-amber-900 rounded lg:bg-transparent text-black hover:text-white"
                   aria-current="page"
@@ -123,11 +95,21 @@ function Menu() {
                 </Link>
               </li>
               <li>
-                <Link to={"/cadastroProduto"}
-                  className="block py-2 pl-3 pr-4 bg-amber-900 rounded lg:bg-transparent text-black hover:text-white"
-                  aria-current="page"
-                > Cadastrar produto
-                </Link>
+                <div className="relative inline-block text-left z-50 ">
+                  <button
+                    onClick={toggleDropdown}
+                    className="bg-[rgb(254,147,4)] text-white px-4 py-2 rounded hover:bg-orange-600 focus:outline-none"
+                  >
+                    Cadastro
+                  </button>
+                  {isOpen && (
+                    <div className="absolute right-0 mt-2 w-[7rem] bg-gray-100 border border-gray-300 rounded shadow-lg flex flex-col ">
+                      <Link to="" className="flex py-2 text-left w-full hover:bg-hoodaLaranja justify-center rounded shadow-lg">Categoria</Link>
+                      <Link to="" className="flex py-2 text-left w-full hover:bg-hoodaLaranja justify-center rounded shadow-lg">Produto</Link>
+
+                    </div>
+                  )}
+                </div>
               </li>
             </ul>
           </div>
