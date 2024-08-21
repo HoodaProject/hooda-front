@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { ColorRing, DNA } from 'react-loader-spinner';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthContext';
@@ -10,17 +10,9 @@ import { toastAlerta } from '../../../utils/ToastAlerta';
 function ListaCategorias() {
   const [categorias, setCategorias] = useState<Categoria[]>([]);
 
-  const navigate = useNavigate();
-
   const { usuario, handleLogout } = useContext(AuthContext);
   const token = usuario.token;
 
-  useEffect(() => {
-    if (token === '') {
-      toastAlerta('Você precisa estar logado','info');
-      navigate('/');
-    }
-  }, [token]);
 
   async function buscarCategorias() {
     try {

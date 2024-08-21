@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useContext, useEffect, useState } from 'react'
+import { ChangeEvent, useContext, useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom';
 
 import { AuthContext } from '../../../contexts/AuthContext';
@@ -62,7 +62,7 @@ function FormProduto () {
     useEffect(() => {
       if (token === '') {
         toastAlerta('Você precisa estar logado', 'info');
-        navigate('/');
+        navigate('/login');
       }
     }, [token]);
   
