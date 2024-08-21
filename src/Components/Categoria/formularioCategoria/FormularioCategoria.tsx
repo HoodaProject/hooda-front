@@ -41,7 +41,7 @@ function FormularioCategoria() {
   async function gerarNovaCategoria(e: ChangeEvent<HTMLFormElement>) {
     e.preventDefault()
 
-    if (id !== undefined) {
+    if (id !== "") {
       try {
         await atualizar(`/categorias`, categoria, setCategoria, {
            headers: {
