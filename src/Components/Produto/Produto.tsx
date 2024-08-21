@@ -1,27 +1,25 @@
 //import React from 'react'
 
+import Produto from "../../model/Produto"
+
 interface ProdutoProps{
-    src: string; 
-    alt: string;  
-    nome: string
-    preco: number
+  produto: Produto
 }
 
-function Produto({nome, src, alt, preco}: ProdutoProps) {
+function ProdutoHome({produto}: ProdutoProps) {
   return (
 
-    <div className="w-80 bg-white border border-gray-200 rounded-lg shadow-md overflow-hidden m-2">
-      <div className="relative h-80">
+    <div className="w-40 bg-white border border-gray-200 rounded-lg shadow-md overflow-hidden m-2">
+      <div className="relative h-50">
         <img
-          src={src}
-          alt={alt}
+      
           className="h-full w-full object-cover"
-        />
+        />   {produto.imagem}
       </div>
       <div className="p-4">
         <div className="mb-2 flex items-center justify-between">
-          <p className="text-hoodaLaranja font-medium">{nome}</p>
-          <p className="text-hoodaLaranja font-medium">R$ {preco.toFixed(2)}</p>
+          <p className="text-hoodaLaranja font-medium">{produto.nome}</p>
+          <p className="text-hoodaLaranja font-medium">R$ {produto.preco.toFixed(2)}</p>
         </div>
         <p className="text-gray-600 text-sm font-normal opacity-75">
           With plenty of talk and listen time, voice-activated Siri access, and an available wireless charging case.
@@ -38,4 +36,4 @@ function Produto({nome, src, alt, preco}: ProdutoProps) {
   )
 }
 
-export default Produto
+export default ProdutoHome

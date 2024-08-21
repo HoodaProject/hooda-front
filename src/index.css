@@ -8,3 +8,10 @@
   font-style: normal;
   font-display: swap;
 }
+
+@font-face {
+  font-family: "Montserrat";
+  src: url('./src/fonts/Montserrat/Montserrat.ttf') format("truetype");
+  font-style: normal;
+  font-display: swap;
+}

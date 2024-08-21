@@ -1,0 +1,15 @@
+.feedback-textarea {
+    position: relative;
+    padding: 80px; /* Ajuste o padding conforme necessário */
+    color: transparent; /* Torna o texto invisível para que apenas a imagem seja visível no fundo */
+    border: 1px solid #d1d5db; /* Borda padrão para o campo de texto */
+    border-radius: 0.5rem; /* Borda arredondada */
+    overflow: hidden; /* Garante que o pseudo-elemento não vaze para fora do container */
+    background: 
+        linear-gradient(
+            rgba(255, 255, 255, 0.3), /* Cor branca com 30% de opacidade, ajusta conforme necessário */
+            rgba(255, 255, 255, 0.3)
+        ),
+        url('https://i.imgur.com/XXqOVR6.png') no-repeat center center;
+    background-size: cover;
+}
