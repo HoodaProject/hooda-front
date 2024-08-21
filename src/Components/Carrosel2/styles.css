@@ -49,10 +49,10 @@ body {
 
 /* Estilização do overlay */
 .text-overlay {
-  position: absolute; /* Sobrepõe a imagem */
-  top: 50%; /* Centraliza verticalmente */
-  left: 50%; /* Centraliza horizontalmente */
-  transform: translate(-50%, -50%); /* Ajusta a posição para centralizar o overlay */
+  position: absolute; 
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); 
   color: white; /* Cor do texto para contraste */
   text-align: center; /* Alinha o texto e o botão ao centro */
   padding: 20px; /* Espaçamento interno */
@@ -62,7 +62,7 @@ body {
 
 /* Estilização do texto grande */
 .overlay-text {
-  font-size: 2rem; /* Tamanho grande do texto */
+  font-size: 5rem; /* Tamanho grande do texto */
   margin-bottom: 20px; /* Espaçamento inferior para separar o texto do botão */
 }
 
