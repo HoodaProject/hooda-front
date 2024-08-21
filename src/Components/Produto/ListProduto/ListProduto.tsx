@@ -1,6 +1,5 @@
-import React, { useContext, useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { DNA } from 'react-loader-spinner';
-import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthContext';
 import { toastAlerta } from '../../../utils/ToastAlerta';
 import { buscar } from '../../../services/Service';
@@ -10,19 +9,10 @@ import Produto from '../../../model/Produto';
 function ListProduto () {
 
     const [produtos, setProdutos] = useState<Produto[]>([]);
-
-    let navigate = useNavigate();
   
     const { usuario, handleLogout } = useContext(AuthContext);
     const token = usuario.token;
-  
-    useEffect(() => {
-      if (token === '') {
-        toastAlerta('Você precisa estar logado', 'info');
-        navigate('/');
-      }
-    }, [token]);
-  
+    
     async function buscarProdutos() {
       try {
         await buscar('/produtos', setProdutos, {
