@@ -7,7 +7,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        "Docker-One": ['Docker-One', 'sans-serif']
+        "Docker-One": ['Docker-One', 'sans-serif'],
+        "Montserrat": ['Montserrat','sans-serif']
       },
       colors: { hoodaLaranja: '#fcae04' }
 
