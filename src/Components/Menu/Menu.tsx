@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import "./Menu.css";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
@@ -12,7 +12,10 @@ function Menu() {
   const { usuario, handleLogout } = useContext(AuthContext);
   const token = usuario.token;
 
-  console.log(token)
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleDropdown = () => setIsOpen(!isOpen);
+
 
   return (
     <>
@@ -59,6 +62,27 @@ function Menu() {
               </Link>
             </div>
           </div>
+
+
+          <div className="relative inline-block text-left">
+      <button
+        onClick={toggleDropdown}
+        className="bg-[rgb(254,147,4)] text-white px-4 py-2 rounded hover:bg-orange-600 focus:outline-none"
+      >
+        Menu
+      </button>
+      {isOpen && (
+        <div className="absolute right-0 mt-2 w-48 bg-white border border-gray-300 rounded shadow-lg">
+          <button className="block px-4 py-2 text-left w-full hover:bg-gray-100">Item 1</button>
+          <button className="block px-4 py-2 text-left w-full hover:bg-gray-100">Item 2</button>
+          <button className="block px-4 py-2 text-left w-full hover:bg-gray-100">Item 3</button>
+        </div>
+      )}
+    </div>
+
+
+        
+
           <div className="hidden lg:flex lg:w-auto lg:order-1" id="mobile-menu-2">
             <ul className="flex flex-col mt-4 lg:flex-row lg:space-x-8 lg:mt-0 font-medium">
               <li>
