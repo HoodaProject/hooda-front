@@ -16,6 +16,7 @@ import ListProduto from "./Components/Produto/ListProduto/ListProduto";
 import FormProduto from "./Components/Produto/FormProduto/FormProduto";
 import DeleteProduto from "./Components/Produto/DeletarProduto/DeletarProduto";
 import Cart from "./Pages/cart/Cart";
+import ProdutosPorCategoria from "./Components/Produto/ProdutoCategoria/ProdutoCategoria";
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
             <Route path="/produtos" element={<ListProduto />} />
             <Route path="/editarProduto/:id" element={<FormProduto />} />
             <Route path="/cart" element={<Cart />} />
+            <Route path="/categorias/:id" element={<ProdutosPorCategoria />} />
           </Routes>
         </div>
         <Footer />

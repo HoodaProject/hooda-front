@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useContext, useEffect, useState } from 'react';
+import { ChangeEvent, useContext, useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthContext';
 import Categoria from '../../../model/Categoria';
@@ -91,7 +91,7 @@ function FormularioCategoria() {
 
   useEffect(() => {
     if (token === '') {
-      toastAlerta('Você precisa estar logado','sucesso');
+      toastAlerta('Você precisa estar logado','info');
       navigate('/login');
     }
   }, [token]);
