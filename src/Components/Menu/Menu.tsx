@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function Menu() {
   return (
     <>
-      <nav className="bg-white border-gray-200 dark:bg-hoodaLaranja">
+      <nav className="bg-hoodaLaranja border-gray-200">
         <div className="max-w-screen-xl px-4 py-2.5 mx-auto flex items-center justify-between">
           <div className="text-xl hover:text-2xl duration-200">
             <Link to={"/home"} className="flex items-center">
@@ -52,7 +52,7 @@ function Menu() {
               <li>
                 <Link to={"/home"}
 
-                  className="block py-2 pl-3 pr-4 text-white bg-amber-900 rounded lg:bg-transparent lg:text-purple-700 lg:p-0 dark:text-black dark:hover:text-white"
+                  className="block py-2 pl-3 pr-4 bg-amber-900 rounded lg:bg-transparent text-black hover:text-white"
                   aria-current="page"
                 >
                   Home
@@ -60,35 +60,35 @@ function Menu() {
               </li>
               <li>
                 <Link to={"/aboutus"}
-                  className="block py-2 pl-3 pr-4 text-white bg-amber-900 rounded lg:bg-transparent lg:text-purple-700 lg:p-0 dark:text-black dark:hover:text-white" 
+                  className="block py-2 pl-3 pr-4 bg-amber-900 rounded lg:bg-transparent text-black hover:text-white" 
                   aria-current="page"
                 > Sobre
                 </Link>
               </li>
               <li>
                 <Link to={"/categorias"}
-                  className="block py-2 pl-3 pr-4 text-white bg-amber-900 rounded lg:bg-transparent lg:text-purple-700 lg:p-0 dark:text-black dark:hover:text-white" 
+                  className="block py-2 pl-3 pr-4 bg-amber-900 rounded lg:bg-transparent text-black hover:text-white" 
                   aria-current="page"
                 > Categorias
                 </Link>
               </li>
               <li>
                 <Link to={"/cadastroCategoria"}
-                  className="block py-2 pl-3 pr-4 text-white bg-amber-900 rounded lg:bg-transparent lg:text-purple-700 lg:p-0 dark:text-black dark:hover:text-white" 
+                  className="block py-2 pl-3 pr-4 bg-amber-900 rounded lg:bg-transparent text-black hover:text-white" 
                   aria-current="page"
                 > Cadastrar categorias
                 </Link>
               </li>
               <li>
                 <Link to={"/produtos"}
-                  className="block py-2 pl-3 pr-4 text-white bg-amber-900 rounded lg:bg-transparent lg:text-purple-700 lg:p-0 dark:text-black dark:hover:text-white" 
+                  className="block py-2 pl-3 pr-4 bg-amber-900 rounded lg:bg-transparent text-black hover:text-white" 
                   aria-current="page"
                 > Produto
                 </Link>
               </li>
               <li>
                 <Link to={"/cadastroProduto"}
-                  className="block py-2 pl-3 pr-4 text-white bg-amber-900 rounded lg:bg-transparent lg:text-purple-700 lg:p-0 dark:text-black dark:hover:text-white" 
+                  className="block py-2 pl-3 pr-4 bg-amber-900 rounded lg:bg-transparent text-black hover:text-white" 
                   aria-current="page"
                 > Cadastrar produto
                 </Link>
@@ -97,6 +97,8 @@ function Menu() {
           </div>
         </div>
       </nav>
+            
+      
     </>
   );
 }
