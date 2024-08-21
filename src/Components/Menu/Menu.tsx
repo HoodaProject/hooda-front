@@ -111,6 +111,14 @@ function Menu() {
                   )}
                 </div>
               </li>
+
+              <li>
+                <Link to={"/perfil"}
+                  className="block py-2 pl-3 pr-4 bg-amber-900 rounded lg:bg-transparent text-black hover:text-white"
+                  aria-current="page"
+                > Perfil
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
