@@ -7,7 +7,7 @@ import UsuarioLogin from '../../../model/UsuarioLogin';
 
 function FormularioUsuario() {
     const [usuario, setUsuario] = useState<UsuarioLogin>({} as UsuarioLogin)
-
+    const [senha, setSenha] = useState('');
     const navigate = useNavigate();
     const { id } = useParams<{ id: string }>();
     const { usuario: usuarioContext, handleLogout } = useContext(AuthContext);
@@ -20,6 +20,7 @@ function FormularioUsuario() {
                     Authorization: token,
                 },
             });
+            setSenha(''); 
         }
         catch (error) {
             toastAlerta('Erro ao buscar usuário', 'erro');
@@ -36,7 +37,10 @@ function FormularioUsuario() {
         setUsuario({
             ...usuario,
             [e.target.name]: e.target.value,
-        });
+        }); 
+        if (e.target.name === 'senha') {
+            setSenha(e.target.value);
+        }
         console.log(JSON.stringify(usuario))
     }
 
@@ -114,7 +118,7 @@ function FormularioUsuario() {
                         placeholder="Senha"
                         name="senha"
                         className="border-2 border-slate-700 rounded p-2"
-                        value={usuario.senha}
+                        value={senha}
                         onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                     />
                 </div>
