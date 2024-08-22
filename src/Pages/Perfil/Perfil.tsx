@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { AuthContext } from '../../contexts/AuthContext'
 import loginLogo from '../../assets/capa-perfil.jpg'
 import { Card } from 'react-bootstrap';
+import { toastAlerta } from '../../utils/ToastAlerta';
 
 
 function Perfil() {
@@ -12,7 +13,7 @@ function Perfil() {
 
   useEffect(() => {
     if (usuario.token === "") {
-      alert('Você precisa estar logado')
+      toastAlerta('Você precisa estar logado','info')
       navigate("/login")
     }
   }, [usuario.token, navigate])
@@ -45,5 +46,4 @@ function Perfil() {
     </div>
   );
 }
-
 export default Perfil;
