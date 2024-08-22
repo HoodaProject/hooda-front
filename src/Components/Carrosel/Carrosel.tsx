@@ -7,7 +7,7 @@ import './styles.css';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import { Link } from 'react-router-dom'; // Importe Link se estiver usando React Router
 
-export default function Carrosel2() {
+export default function Carrosel() {
     return (
         <Swiper
             spaceBetween={30}

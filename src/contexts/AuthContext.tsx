@@ -3,12 +3,18 @@ import { createContext, ReactNode, useState } from "react"
 import UsuarioLogin from "../model/UsuarioLogin"
 import { login } from "../services/Service"
 import { toastAlerta } from "../utils/ToastAlerta"
+import Produto from "../model/Produto"
 
 interface AuthContextProps {
     usuario: UsuarioLogin
     handleLogout(): void
     handleLogin(usuario: UsuarioLogin): Promise<void>
     isLoading: boolean
+    adicionarProduto: (produto: Produto) => void
+    removerProduto: (produtoId: number) => void
+    limparCart: () => void
+    items: Produto[]
+    quantidadeItems: number
 }
 
 interface AuthProviderProps {
@@ -54,10 +60,32 @@ export function AuthProvider({ children }: AuthProviderProps) {
             token: ""
         })
     }
+        const [items, setItems] = useState<Produto[]>([])
+    
+        const quantidadeItems = items.length
+    
+        function adicionarProduto(produto: Produto) {
+            setItems(state => [...state, produto])
+        }
 
+        function removerProduto(produtoId: number) {
+    
+            const indice = items.findIndex(items => items.id === produtoId) 
+            let novoCart = [...items]  
+    
+            if(indice >= 0){
+                novoCart.splice(indice, 1)
+                setItems(novoCart) 
+            }
+        }
+    
+        function limparCart() {
+            alert("Compra Efetuada com Sucesso")
+            setItems([])
+        }    
 
-    return (
-        <AuthContext.Provider value={{ usuario, handleLogin, handleLogout, isLoading }}>
+    return (    // Adicionar as propriedades ao Provider já existente
+        <AuthContext.Provider value={{ usuario, handleLogin, handleLogout, isLoading, adicionarProduto, removerProduto, limparCart, items, quantidadeItems }}>
             {children}
         </AuthContext.Provider>
     )

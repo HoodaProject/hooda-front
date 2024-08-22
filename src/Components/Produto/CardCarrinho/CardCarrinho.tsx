@@ -1,14 +1,14 @@
 import { useContext } from 'react'
-import { Context } from '../../../../contexts/Contexts'
+import { AuthContext } from '../../../contexts/AuthContext'
 
-import  Produto  from "../../../../model/Produto"
+import  Produto  from "../../../model/Produto"
 
 interface CardProdutosProps {
     item: Produto
 }
 
-function CardProdutos1({ item }: CardProdutosProps) {
-    const { adicionarProduto, removerProduto } = useContext(Context)
+function CardCarrinho({ item }: CardProdutosProps) {
+    const { adicionarProduto, removerProduto } = useContext(AuthContext)
 
     return (
         <div className="max-w-sm rounded overflow-hidden shadow-lg">
@@ -31,4 +31,4 @@ function CardProdutos1({ item }: CardProdutosProps) {
     )
 }
 
-export default CardProdutos1
+export default CardCarrinho
