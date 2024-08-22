@@ -104,8 +104,8 @@ function Menu() {
                   </button>
                   {isOpen && (
                     <div className="absolute right-0 mt-2 w-[7rem] bg-gray-100 border border-gray-300 rounded shadow-lg flex flex-col ">
-                      <Link to="" className="flex py-2 text-left w-full hover:bg-hoodaLaranja justify-center rounded shadow-lg">Categoria</Link>
-                      <Link to="" className="flex py-2 text-left w-full hover:bg-hoodaLaranja justify-center rounded shadow-lg">Produto</Link>
+                      <Link to="/cadastroCategoria" className="flex py-2 text-left w-full hover:bg-hoodaLaranja justify-center rounded shadow-lg">Categoria</Link>
+                      <Link to="/cadastroProduto" className="flex py-2 text-left w-full hover:bg-hoodaLaranja justify-center rounded shadow-lg">Produto</Link>
 
                     </div>
                   )}
