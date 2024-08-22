@@ -1,10 +1,10 @@
 //import Carousel from '../../Components/Carrosel/Carrosel'
 import { useEffect, useState } from 'react';
-import Carrosel2 from '../../Components/Carrosel/Carrosel'
 import ListProduto from '../../Components/Produto/ListProduto/ListProduto'
 import Categoria from '../../model/Categoria';
 import { buscar } from '../../services/Service';
 import { Link } from 'react-router-dom';
+import Carrosel from '../../Components/Carrosel/Carrosel';
 
 
 function Home() {
@@ -23,7 +23,7 @@ function Home() {
 
                 <div className='grid grid-cols-12'>
                         <div className='min-h-[0vh] max-h-[60vh] max-md:hidden pb-8 flex items-center col-span-12 p-0 m-0'>
-                                <Carrosel2 />
+                            <Carrosel />
                         </div>
                         <div className='text-hoodaLaranja xl:text-3xl text-center col-span-2 text-md md:text-2xl lg:text-3xl'>
                                 Categorias
