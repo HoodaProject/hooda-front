@@ -30,3 +30,7 @@ export const cadastrar = async (url: string, dados: Object, setDados: Function, 
     const resposta = await api.post(url, dados, header)
     setDados(resposta.data)
 }
+export const listar = async (url: string, setDados: Function) => {
+    const resposta = await api.get(url)
+    setDados(resposta.data)
+}
