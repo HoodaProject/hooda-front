@@ -9,6 +9,7 @@ interface AuthContextProps {
     usuario: UsuarioLogin
     handleLogout(): void
     handleLogin(usuario: UsuarioLogin): Promise<void>
+    updateUsuarioContext(novosDados: Partial<UsuarioLogin>): void;
     isLoading: boolean
     adicionarProduto: (produto: Produto) => void
     removerProduto: (produtoId: number) => void
@@ -60,6 +61,15 @@ export function AuthProvider({ children }: AuthProviderProps) {
             token: ""
         })
     }
+    function updateUsuarioContext(novosDados: Partial<UsuarioLogin>) {
+        setUsuario((prevState) => ({
+            ...prevState,
+            ...novosDados,
+        }));
+    }
+
+    return (
+        <AuthContext.Provider value={{ usuario, handleLogin, handleLogout,updateUsuarioContext, isLoading }}>
         const [items, setItems] = useState<Produto[]>([])
     
         const quantidadeItems = items.length
