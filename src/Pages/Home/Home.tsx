@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
-import Carrosel2 from '../../Components/Carrosel/Carrosel'
 import ListProduto from '../../Components/Produto/ListProduto/ListProduto'
 import Categoria from '../../model/Categoria';
 import { buscar } from '../../services/Service';
 import { Link } from 'react-router-dom';
+import Carrosel from '../../Components/Carrosel/Carrosel';
 
 
 function Home() {
