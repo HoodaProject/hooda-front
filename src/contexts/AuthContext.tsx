@@ -49,29 +49,30 @@ export function AuthProvider({ children }: AuthProviderProps) {
     }
   }
 
-  function handleLogout() {
-    setUsuario({
-      id: 0,
-      nome: "",
-      usuario: "",
-      senha: "",
-      foto: "",
-      token: "",
-    });
-  }
-  function updateUsuarioContext(novosDados: Partial<UsuarioLogin>) {
-    setUsuario((prevState) => ({
-      ...prevState,
-      ...novosDados,
-    }));
-  }
-  const [items, setItems] = useState<Produto[]>([]);
+    function handleLogout() {
+        setUsuario({
+            id: 0,
+            nome: "",
+            usuario: "",
+            senha: "",
+            foto: "",
+            token: ""
+        })
+    }
+    function updateUsuarioContext(novosDados: Partial<UsuarioLogin>) {
+        setUsuario((prevState) => ({
+            ...prevState,
+            ...novosDados,
+        }));
+    }
+        const [items, setItems] = useState<Produto[]>([])
+    
+        const quantidadeItems = items.length
+    
+        function adicionarProduto(produto: Produto) {
+            setItems(state => [...state, produto])
+        }
 
-  const quantidadeItems = items.length;
-
-  function adicionarProduto(produto: Produto) {
-    setItems((state) => [...state, produto]);
-  }
 
   function removerProduto(produtoId: number) {
     const indice = items.findIndex((items) => items.id === produtoId);
@@ -88,22 +89,10 @@ export function AuthProvider({ children }: AuthProviderProps) {
     setItems([]);
   }
 
-  return (
-    // Adicionar as propriedades ao Provider já existente
-    <AuthContext.Provider
-      value={{
-        usuario,
-        handleLogin,
-        handleLogout,
-        isLoading,
-        adicionarProduto,
-        removerProduto,
-        limparCart,
-        items,
-        quantidadeItems,
-      }}
-    >
-      {children}
-    </AuthContext.Provider>
-  );
+    return (    // Adicionar as propriedades ao Provider já existente
+        <AuthContext.Provider value={{ usuario, handleLogin, handleLogout, isLoading, adicionarProduto, removerProduto, updateUsuarioContext, limparCart, items, quantidadeItems }}>
+            {children}
+        </AuthContext.Provider>
+    )
 }
+

@@ -20,6 +20,7 @@ import Perfil from './Pages/Perfil/Perfil';
 import FormularioUsuario from "./Components/Perfil/formularioUsuario/formularioUsuario";
 import ProdutosPorCategoria from "./Components/Produto/ProdutoCategoria/ProdutoCategoria";
 
+
 function App() {
   return (
     <>
@@ -42,10 +43,10 @@ function App() {
             <Route path="/cadastroProduto" element={<FormProduto />} />
             <Route path="/produtos" element={<ListProduto />} />
             <Route path="/editarProduto/:id" element={<FormProduto />} />
+            <Route path="/cart" element={<Cart />} />
             <Route path="/perfil" element={<Perfil />} />
             <Route path="/editarPerfil/:id" element={<FormularioUsuario />} />
             <Route path="/categorias/:id" element={<ProdutosPorCategoria />} />
-            <Route path="/cart" element={<Cart/>} /> 
           </Routes>
         </div>
         <Footer />
