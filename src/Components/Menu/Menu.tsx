@@ -1,16 +1,31 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import "./Menu.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
+import { AuthContext } from "../../contexts/AuthContext";
+
 function Menu() {
+
+  let navigate = useNavigate();
+
+  const { id } = useParams<{ id: string }>();
+
+  const { usuario, handleLogout } = useContext(AuthContext);
+  const token = usuario.token;
+
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleDropdown = () => setIsOpen(!isOpen);
+
+
   return (
     <>
-      <nav className="bg-white border-gray-200 dark:bg-hoodaLaranja">
+      <nav className="bg-hoodaLaranja border-gray-200">
         <div className="max-w-screen-xl px-4 py-2.5 mx-auto flex items-center justify-between">
           <div className="text-xl hover:text-2xl duration-200">
             <Link to={"/home"} className="flex items-center">
               <img
                 src="https://i.imgur.com/bLUnK48.png"
-                className="h-8 mr- sm:h-9 hover:h-9 " 
+                className="h-8 mr- sm:h-9 hover:h-9 "
                 alt="Hooda Logo"
               />
               <span className="m-2 pt-1 font-Docker-One dark:text-black">HOODA </span>
@@ -18,12 +33,12 @@ function Menu() {
             </Link>
           </div>
 
-
-
           <div className="flex items-center lg:order-2">
-            <Link to="/login" className="text-white font-d text-1xl hover:bg-amber-400 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg px-4 py-2 lg:px-5 lg:py-2.5  dark:focus:ring-purple-800"
-            > Entrar
-            </Link>
+
+            <button className="text-white font-d text-1xl hover:bg-amber-400 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg px-4 py-2 lg:px-5 lg:py-2.5  dark:focus:ring-purple-800"
+            > {token === '' ? <Link to='/login'><button>Entrar</button></Link> : <button onClick={handleLogout}>Sair</button>}
+            </button>
+
             <button
               data-collapse-toggle="mobile-menu-2"
               type="button"
@@ -42,7 +57,7 @@ function Menu() {
             </button>
             <div>
               <Link to={"/cart"}><img src="https://i.imgur.com/pTCHwra.png"
-                className="h-4 mr- sm:h-6 m-3" 
+                className="h-4 mr- sm:h-6 m-3"
                 alt="Logo Carrinho"></img>
               </Link>
             </div>
@@ -52,7 +67,7 @@ function Menu() {
               <li>
                 <Link to={"/home"}
 
-                  className="block py-2 pl-3 pr-4 text-white bg-amber-900 rounded lg:bg-transparent lg:text-purple-700 lg:p-0 dark:text-black dark:hover:text-white"
+                  className="block py-2 pl-3 pr-4 bg-amber-900 rounded lg:bg-transparent text-black hover:text-white"
                   aria-current="page"
                 >
                   Home
@@ -60,43 +75,56 @@ function Menu() {
               </li>
               <li>
                 <Link to={"/aboutus"}
-                  className="block py-2 pl-3 pr-4 text-white bg-amber-900 rounded lg:bg-transparent lg:text-purple-700 lg:p-0 dark:text-black dark:hover:text-white" 
+                  className="block py-2 pl-3 pr-4 bg-amber-900 rounded lg:bg-transparent text-black hover:text-white"
                   aria-current="page"
                 > Sobre
                 </Link>
               </li>
               <li>
                 <Link to={"/categorias"}
-                  className="block py-2 pl-3 pr-4 text-white bg-amber-900 rounded lg:bg-transparent lg:text-purple-700 lg:p-0 dark:text-black dark:hover:text-white" 
+                  className="block py-2 pl-3 pr-4 bg-amber-900 rounded lg:bg-transparent text-black hover:text-white"
                   aria-current="page"
                 > Categorias
                 </Link>
               </li>
               <li>
-                <Link to={"/cadastroCategoria"}
-                  className="block py-2 pl-3 pr-4 text-white bg-amber-900 rounded lg:bg-transparent lg:text-purple-700 lg:p-0 dark:text-black dark:hover:text-white" 
-                  aria-current="page"
-                > Cadastrar categorias
-                </Link>
-              </li>
-              <li>
                 <Link to={"/produtos"}
-                  className="block py-2 pl-3 pr-4 text-white bg-amber-900 rounded lg:bg-transparent lg:text-purple-700 lg:p-0 dark:text-black dark:hover:text-white" 
+                  className="block py-2 pl-3 pr-4 bg-amber-900 rounded lg:bg-transparent text-black hover:text-white"
                   aria-current="page"
                 > Produto
                 </Link>
               </li>
               <li>
-                <Link to={"/cadastroProduto"}
-                  className="block py-2 pl-3 pr-4 text-white bg-amber-900 rounded lg:bg-transparent lg:text-purple-700 lg:p-0 dark:text-black dark:hover:text-white" 
+                <div className="relative inline-block text-left z-50 ">
+                  <button
+                    onClick={toggleDropdown}
+                    className="bg-[rgb(254,147,4)] text-white px-4 py-2 rounded hover:bg-orange-600 focus:outline-none"
+                  >
+                    Cadastro
+                  </button>
+                  {isOpen && (
+                    <div className="absolute right-0 mt-2 w-[7rem] bg-gray-100 border border-gray-300 rounded shadow-lg flex flex-col ">
+                      <Link to="" className="flex py-2 text-left w-full hover:bg-hoodaLaranja justify-center rounded shadow-lg">Categoria</Link>
+                      <Link to="" className="flex py-2 text-left w-full hover:bg-hoodaLaranja justify-center rounded shadow-lg">Produto</Link>
+
+                    </div>
+                  )}
+                </div>
+              </li>
+
+              <li>
+                <Link to={"/perfil"}
+                  className="block py-2 pl-3 pr-4 bg-amber-900 rounded lg:bg-transparent text-black hover:text-white"
                   aria-current="page"
-                > Cadastrar produto
+                > Perfil
                 </Link>
               </li>
             </ul>
           </div>
         </div>
       </nav>
+
+
     </>
   );
 }

@@ -1,5 +1,5 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { DNA } from 'react-loader-spinner';
+import { useContext, useEffect, useState } from 'react';
+import { ColorRing, DNA } from 'react-loader-spinner';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthContext';
 import Categoria from '../../../model/Categoria';
@@ -10,17 +10,9 @@ import { toastAlerta } from '../../../utils/ToastAlerta';
 function ListaCategorias() {
   const [categorias, setCategorias] = useState<Categoria[]>([]);
 
-  const navigate = useNavigate();
-
   const { usuario, handleLogout } = useContext(AuthContext);
   const token = usuario.token;
 
-  useEffect(() => {
-    if (token === '') {
-      toastAlerta('Você precisa estar logado','info');
-      navigate('/');
-    }
-  }, [token]);
 
   async function buscarCategorias() {
     try {
@@ -43,14 +35,7 @@ function ListaCategorias() {
   return (
     <>
       {categorias.length === 0 && (
-        <DNA
-          visible={true}
-          height="200"
-          width="200"
-          ariaLabel="dna-loading"
-          wrapperStyle={{}}
-          wrapperClass="dna-wrapper mx-auto"
-        />
+        <ColorRing visible={true} colors={["#FEAE04","#FEAE04","#FEAE04","#FEAE04","#FEAE04"]}/>
       )}
       <div className='container mx-auto my-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
         {categorias.map((categoria) => (
