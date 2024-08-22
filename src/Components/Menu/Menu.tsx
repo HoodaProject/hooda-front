@@ -16,6 +16,7 @@ function Menu() {
 
   const toggleDropdown = () => setIsOpen(!isOpen);
 
+
   return (
     <>
       <nav className="bg-hoodaLaranja border-gray-200">
@@ -121,7 +122,9 @@ function Menu() {
             </ul>
           </div>
         </div>
-      </nav>        
+      </nav>
+
+
     </>
   );
 }
