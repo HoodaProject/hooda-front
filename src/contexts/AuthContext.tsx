@@ -6,16 +6,17 @@ import { toastAlerta } from "../utils/ToastAlerta";
 import Produto from "../model/Produto";
 
 interface AuthContextProps {
-  usuario: UsuarioLogin;
-  handleLogout(): void;
-  handleLogin(usuario: UsuarioLogin): Promise<void>;
-  updateUsuarioContext(novosDados: Partial<UsuarioLogin>): void;
-  isLoading: boolean;
-  adicionarProduto: (produto: Produto) => void;
-  removerProduto: (produtoId: number) => void;
-  limparCart: () => void;
-  items: Produto[];
-  quantidadeItems: number;
+    usuario: UsuarioLogin
+    handleLogout(): void
+    handleLogin(usuario: UsuarioLogin): Promise<void>
+    updateUsuarioContext(novosDados: Partial<UsuarioLogin>): void;
+    isLoading: boolean
+    adicionarProduto: (produto: Produto) => void
+    removerProduto: (produtoId: number) => void
+    limparCart: () => void
+    items: Produto[]
+    quantidadeItems: number
+    
 }
 
 interface AuthProviderProps {
