@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useEffect, useState } from 'react'
+import { ChangeEvent, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
  import Usuario from '../../model/Usuario'
 import { cadastrarUsuario } from '../../services/Service'

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -7,9 +6,9 @@ import './styles.css';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import { Link } from 'react-router-dom'; // Importe Link se estiver usando React Router
 
-export default function Carrosel2() {
+export default function Carrosel() {
     return (
-        <Swiper
+          <Swiper
             spaceBetween={30}
             centeredSlides={true}
             autoplay={{

@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from 'react'
-import { ColorRing, DNA } from "react-loader-spinner";
+import { ColorRing } from "react-loader-spinner";
 import { AuthContext } from "../../../contexts/AuthContext";
 import { toastAlerta } from "../../../utils/ToastAlerta";
 import { buscar } from "../../../services/Service";
