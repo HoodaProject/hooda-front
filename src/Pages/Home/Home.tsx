@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Carrosel2 from '../../Components/Carrosel/Carrosel';
 import ListProduto from '../../Components/Produto/ListProduto/ListProduto';
+import { useEffect, useState } from 'react';
 import Categoria from '../../model/Categoria';
 import { buscar } from '../../services/Service';
 
