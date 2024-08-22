@@ -1,6 +1,7 @@
 import Categoria from './Categoria';
 import Usuario from './Usuario';
 
+
 export default interface Produto {
     id: number; 
     avaliacao: number;
@@ -12,3 +13,4 @@ export default interface Produto {
     categoria: Categoria | null;
     usuario: Usuario | null;
 }
+ 
