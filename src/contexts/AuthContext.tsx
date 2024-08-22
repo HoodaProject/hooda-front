@@ -3,13 +3,11 @@ import { createContext, ReactNode, useState } from "react"
 import UsuarioLogin from "../model/UsuarioLogin"
 import { login } from "../services/Service"
 import { toastAlerta } from "../utils/ToastAlerta"
-import Produto from "../model/Produto"
 
 interface AuthContextProps {
     usuario: UsuarioLogin
     handleLogout(): void
     handleLogin(usuario: UsuarioLogin): Promise<void>
-    updateUsuarioContext(novosDados: Partial<UsuarioLogin>): void;
     isLoading: boolean
     adicionarProduto: (produto: Produto) => void
     removerProduto: (produtoId: number) => void
