@@ -16,6 +16,7 @@ interface AuthContextProps {
     limparCart: () => void
     items: Produto[]
     quantidadeItems: number
+    
 }
 
 interface AuthProviderProps {
