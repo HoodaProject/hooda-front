@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import Produto from '../../../model/Produto'
 import { AuthContext } from '../../../contexts/AuthContext';
