@@ -1,30 +1,24 @@
-# React + TypeScript + Vite
+# Hooda: Promovendo um Futuro Mais Verde
+<p align="center">
+  <img src="https://i.imgur.com/XlH3SL3.png" alt="Hooda logo">
+</p>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Introdução
 
-Currently, two official plugins are available:
+A **Hooda** surgiu para atender à crescente demanda por soluções que respeitem o meio ambiente e promovam práticas de produção sustentáveis. Em nossa plataforma, oferecemos uma curadoria cuidadosa de produtos, desde itens reutilizáveis até produtos biodegradáveis. Nosso objetivo é permitir que os consumidores façam escolhas que não apenas atendam às suas necessidades, mas também tenham um impacto positivo no planeta.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Nossa Missão
 
-## Expanding the ESLint configuration
+Acreditamos que cada compra realizada na Hooda é um passo importante para:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **Reduzir o desperdício:** Optando por produtos que têm menor impacto ambiental e maior durabilidade.
+- **Incentivar o uso de materiais recicláveis:** Selecionando produtos fabricados com materiais que podem ser reutilizados ou reciclados.
+- **Apoiar uma cadeia de produção mais consciente:** Trabalhando exclusivamente com marcas que compartilham nossos valores de responsabilidade ambiental.
 
-- Configure the top-level `parserOptions` property like this:
+Desde a nossa criação, temos colaborado com marcas que demonstram um compromisso sólido com a sustentabilidade. Garantimos que cada item disponível em nossa plataforma tenha sido produzido com uma abordagem ambientalmente responsável.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json', './tsconfig.app.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+## Junte-se a Nós
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Venha conhecer a Hooda e faça parte da mudança para um consumo mais sustentável e acessível. Cada escolha conta e pode fazer a diferença para um futuro mais verde.
+
+[Explore nossos produtos](#) e descubra como você pode contribuir para um planeta mais saudável.

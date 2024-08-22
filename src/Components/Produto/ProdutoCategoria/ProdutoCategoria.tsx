@@ -71,7 +71,6 @@ function ProdutosPorCategoria() {
                     </div>
                 ))}
             </div>
-
         </div>
     );
 }
