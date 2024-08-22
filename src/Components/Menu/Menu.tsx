@@ -1,13 +1,9 @@
-import React, { useContext, useState } from "react";
+import { useContext, useState } from "react";
 import "./Menu.css";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
 
 function Menu() {
-
-  let navigate = useNavigate();
-
-  const { id } = useParams<{ id: string }>();
 
   const { usuario, handleLogout } = useContext(AuthContext);
   const token = usuario.token;
