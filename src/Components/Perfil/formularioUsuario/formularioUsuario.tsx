@@ -7,10 +7,10 @@ import UsuarioLogin from '../../../model/UsuarioLogin';
 
 function FormularioUsuario() {
     const [usuario, setUsuario] = useState<UsuarioLogin>({} as UsuarioLogin)
-    const [senha, setSenha] = useState('');
+
     const navigate = useNavigate();
     const { id } = useParams<{ id: string }>();
-    const { usuario: usuarioContext, handleLogout, updateUsuarioContext } = useContext(AuthContext);
+    const { usuario: usuarioContext, handleLogout } = useContext(AuthContext);
     const token = usuarioContext.token;
 
     async function buscarPorId(id: string) {
@@ -20,7 +20,6 @@ function FormularioUsuario() {
                     Authorization: token,
                 },
             });
-            setSenha(''); 
         }
         catch (error) {
             toastAlerta('Erro ao buscar usuário', 'erro');
@@ -37,10 +36,7 @@ function FormularioUsuario() {
         setUsuario({
             ...usuario,
             [e.target.name]: e.target.value,
-        }); 
-        if (e.target.name === 'senha') {
-            setSenha(e.target.value);
-        }
+        });
         console.log(JSON.stringify(usuario))
     }
 
@@ -53,12 +49,7 @@ function FormularioUsuario() {
                     headers: {
                         'Authorization': token
                     }
-                });
-                updateUsuarioContext({
-                    ...usuarioContext,
-                    nome: usuario.nome,
-                    foto: usuario.foto,
-                });
+                })
 
                 toastAlerta('Usuário atualizado com sucesso', 'sucesso');
                 retornar()
@@ -123,7 +114,7 @@ function FormularioUsuario() {
                         placeholder="Senha"
                         name="senha"
                         className="border-2 border-slate-700 rounded p-2"
-                        value={senha}
+                        value={usuario.senha}
                         onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                     />
                 </div>
