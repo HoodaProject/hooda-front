@@ -20,7 +20,7 @@ function CardProduto({ produto }: CardProdutoProps) {
         <img src={produto.imagem} className="h-full w-full object-cover" alt="" />
 
       </div>
-      <div className='p-4 '>
+      <div className='p-4 h-[12rem]'>
         <div className="mb-2 flex items-center justify-between text-xl">
           <p className="text-hoodaLaranja font-medium">{produto.nome}</p>
         </div>
@@ -63,7 +63,7 @@ function CardProduto({ produto }: CardProdutoProps) {
           <img src={produto.imagem} className="h-full w-full object-cover" alt="" />
 
         </div>
-        <div className='p-4'>
+        <div className='p-4 h-[12rem]'>
           <div className="mb-2 flex items-center justify-between text-xl">
             <p className="text-hoodaLaranja font-medium">{produto.nome}</p>
           </div>
