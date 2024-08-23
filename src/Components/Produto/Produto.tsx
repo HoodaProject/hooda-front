@@ -1,5 +1,3 @@
-//import React from 'react'
-
 import Produto from "../../model/Produto"
 
 interface ProdutoProps{
