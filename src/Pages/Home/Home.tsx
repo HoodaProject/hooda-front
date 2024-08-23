@@ -1,4 +1,3 @@
-//import Carousel from '../../Components/Carrosel/Carrosel'
 import { useEffect, useState } from 'react';
 import ListProduto from '../../Components/Produto/ListProduto/ListProduto'
 import Categoria from '../../model/Categoria';

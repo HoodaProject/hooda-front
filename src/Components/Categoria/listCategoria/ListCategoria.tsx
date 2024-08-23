@@ -1,6 +1,5 @@
 import { useContext, useEffect, useState } from 'react';
-import { ColorRing, DNA } from 'react-loader-spinner';
-import { useNavigate } from 'react-router-dom';
+import { ColorRing } from 'react-loader-spinner';
 import { AuthContext } from '../../../contexts/AuthContext';
 import Categoria from '../../../model/Categoria';
 import { buscar } from '../../../services/Service';

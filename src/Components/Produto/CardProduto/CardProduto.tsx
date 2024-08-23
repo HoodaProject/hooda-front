@@ -1,7 +1,8 @@
-import React, { useContext } from 'react'
+import { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import Produto from '../../../model/Produto'
 import { AuthContext } from '../../../contexts/AuthContext';
+import { toastAlerta } from '../../../utils/ToastAlerta';
 
 interface CardProdutoProps {
   produto: Produto
@@ -9,7 +10,7 @@ interface CardProdutoProps {
 
 function CardProduto({ produto }: CardProdutoProps) {
 
-  const { usuario } = useContext(AuthContext);
+  const { usuario, adicionarProduto  } = useContext(AuthContext);
 
   let opcoes;
 
@@ -34,9 +35,6 @@ function CardProduto({ produto }: CardProdutoProps) {
         </p>
         <p className="text-gray-600 text-sm font-normal opacity-75">
           Estoque: {produto.estoque}
-        </p>
-        <p className="text-gray-600 text-sm font-normal opacity-75">
-          Preço: {produto.preco.toFixed(2)}
         </p>
         <p className="text-gray-600 text-sm font-normal opacity-75">
           Avaliação: {produto.avaliacao}
@@ -65,7 +63,7 @@ function CardProduto({ produto }: CardProdutoProps) {
           <img src={produto.imagem} className="h-full w-full object-cover" alt="" />
 
         </div>
-        <div className='p-4 '>
+        <div className='p-4'>
           <div className="mb-2 flex items-center justify-between text-xl">
             <p className="text-hoodaLaranja font-medium">{produto.nome}</p>
           </div>
@@ -83,7 +81,11 @@ function CardProduto({ produto }: CardProdutoProps) {
         </div>
 
         <div className="p-4 border-t border-gray-200">
-          <button
+        <button
+    onClick={() => {
+      adicionarProduto(produto);
+      toastAlerta('Produto adicionado ao carrinho!','sucesso');
+    }}
             className="w-full bg-hoodaLaranja text-white py-2 px-4 rounded-lg shadow hover:bg-amber-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
           >Adicionar ao Carrinho</button>
         </div>
