@@ -4,15 +4,16 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
 
 function Menu() {
+<<<<<<< HEAD
 
+=======
+>>>>>>> 0b4a8dd7943fd68afb855fd97adc6628860e923f
   const { usuario, handleLogout } = useContext(AuthContext);
   const token = usuario.token;
 
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleDropdown = () => setIsOpen(!isOpen);
-
-
   return (
     <>
       <nav className="bg-hoodaLaranja border-gray-200">
@@ -25,7 +26,6 @@ function Menu() {
                 alt="Hooda Logo"
               />
               <span className="m-2 pt-1 font-Docker-One dark:text-black">HOODA </span>
-
             </Link>
           </div>
 
@@ -100,9 +100,8 @@ function Menu() {
                   </button>
                   {isOpen && (
                     <div className="absolute right-0 mt-2 w-[7rem] bg-gray-100 border border-gray-300 rounded shadow-lg flex flex-col ">
-                      <Link to="" className="flex py-2 text-left w-full hover:bg-hoodaLaranja justify-center rounded shadow-lg">Categoria</Link>
-                      <Link to="" className="flex py-2 text-left w-full hover:bg-hoodaLaranja justify-center rounded shadow-lg">Produto</Link>
-
+                      <Link to="/cadastroCategoria" className="flex py-2 text-left w-full hover:bg-hoodaLaranja justify-center rounded shadow-lg">Categoria</Link>
+                      <Link to="/cadastroProduto" className="flex py-2 text-left w-full hover:bg-hoodaLaranja justify-center rounded shadow-lg">Produto</Link>
                     </div>
                   )}
                 </div>
@@ -119,8 +118,6 @@ function Menu() {
           </div>
         </div>
       </nav>
-
-
     </>
   );
 }

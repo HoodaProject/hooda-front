@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0b4a8dd7943fd68afb855fd97adc6628860e923f
 import { GithubLogo, LinkedinLogo } from "@phosphor-icons/react";
 import { Link } from "react-router-dom";
 import './AboutUs.css'

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import { ChangeEvent, useEffect, useState } from 'react'
+=======
+import{ ChangeEvent, useEffect, useState } from 'react'
+>>>>>>> 0b4a8dd7943fd68afb855fd97adc6628860e923f
 import { useNavigate } from 'react-router-dom'
  import Usuario from '../../model/Usuario'
 import { cadastrarUsuario } from '../../services/Service'

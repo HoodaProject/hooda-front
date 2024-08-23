@@ -1,5 +1,4 @@
 import { createContext, ReactNode, useState } from "react"
-
 import UsuarioLogin from "../model/UsuarioLogin"
 import { login } from "../services/Service"
 import { toastAlerta } from "../utils/ToastAlerta"
@@ -17,7 +16,6 @@ interface AuthContextProps {
     items: Produto[]
     quantidadeItems: number   
 }
-
 interface AuthProviderProps {
     children: ReactNode
 }

@@ -12,7 +12,7 @@ function Footer() {
               className="h-[6rem] block md:mx-auto"
             />
 
-            <div className="flex grid grid-cols-1 mx-auto md:grid-cols-3 lg:grid-cols-5 -mx-3 lg:-mx-6">
+            <div className="flex grid-cols-1  md:grid-cols-3 lg:grid-cols-5 -mx-3 lg:-mx-6">
               <div className="w-full md:w-auto p-3 md:px-6">
                 
                   <Link className="text-lg text-amber-400 hover:text-white hover:text-xl duration-200 font-medium" to="/home">Home</Link>
@@ -44,5 +44,4 @@ function Footer() {
     </>
   );
 }
-
 export default Footer;
