@@ -11,7 +11,7 @@ function CardCarrinho({ item }: CardProdutosProps) {
     const { adicionarProduto, removerProduto } = useContext(AuthContext)
 
     return (
-        <div className=''>
+        <div className='shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] rounded-md'>
         <div className="relative h-40">
           <img src={item.imagem} className="h-full w-full object-cover" alt="" />
 

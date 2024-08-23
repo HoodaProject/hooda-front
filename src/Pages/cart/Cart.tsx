@@ -7,10 +7,6 @@ function Cart() {
 console.log(items)
     return (
         <>
-            <div className='flex justify-end m-2'> 
-                <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
-                    onClick={limparCart}>Finalizar Compra</button>
-            </div>
 
             <div className='flex flex-col'>
                 <div className="flex justify-center w-full my-4">
@@ -25,6 +21,10 @@ console.log(items)
                     </div>
                 </div>
             </ div >
+            <div className='flex justify-center m-2 pt-6'> 
+                <button className="bg-hoodaLaranja hover:bg-amber-400 text-white font-bold py-2 px-4 rounded-full"
+                    onClick={limparCart}>Finalizar Compra</button>
+            </div>
         </>
     )
 }
