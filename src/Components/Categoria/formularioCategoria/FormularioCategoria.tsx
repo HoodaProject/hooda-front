@@ -12,125 +12,127 @@ function FormularioCategoria() {
 
   const { id } = useParams<{ id: string }>();
 
-   const { usuario, handleLogout } = useContext(AuthContext);
-   const token = usuario.token;
+  const { usuario, handleLogout } = useContext(AuthContext);
+  const token = usuario.token;
 
   async function buscarPorId(id: string) {
     await buscar(`/categorias/${id}`, setCategoria, {
-       headers: {
-         Authorization: token,
-       },
+      headers: {
+        Authorization: token,
+      },
     });
   }
 
   useEffect(() => {
     if (id !== undefined) {
-      buscarPorId(id)
+      buscarPorId(id);
     }
-  }, [id])
+  }, [id]);
 
   function atualizarEstado(e: ChangeEvent<HTMLInputElement>) {
     setCategoria({
       ...categoria,
-      [e.target.name]: e.target.value
-    })
+      [e.target.name]: e.target.value,
+    });
 
-    console.log(JSON.stringify(categoria))
+    console.log(JSON.stringify(categoria));
   }
 
   async function gerarNovaCategoria(e: ChangeEvent<HTMLFormElement>) {
-    e.preventDefault()
+    e.preventDefault();
 
-    if (id !== "") {
+    if (id !== undefined) {
       try {
         await atualizar(`/categorias`, categoria, setCategoria, {
-           headers: {
-             'Authorization': token
-           }
-        })
+          headers: {
+            Authorization: token,
+          },
+        });
 
-        toastAlerta('Categoria atualizado com sucesso','sucesso')
-        retornar()
-
+        toastAlerta('Categoria atualizada com sucesso', 'sucesso');
+        retornar();
       } catch (error: any) {
-         if (error.toString().includes('403')) {
-           toastAlerta('O token expirou, favor logar novamente','info')
-           handleLogout()
-         } else {
-           toastAlerta('Erro ao atualizar a Categoria','erro')
-         }
-
+        if (error.toString().includes('403')) {
+          toastAlerta('O token expirou, favor logar novamente', 'info');
+          handleLogout();
+        } else {
+          toastAlerta('Erro ao atualizar a Categoria', 'erro');
+        }
       }
-
     } else {
       try {
         await cadastrar(`/categorias`, categoria, setCategoria, {
-           headers: {
-            'Authorization': token
-           }
-        })
+          headers: {
+            Authorization: token,
+          },
+        });
 
-        toastAlerta('Categoria cadastrada com sucesso','sucesso')
-
+        toastAlerta('Categoria cadastrada com sucesso', 'sucesso');
       } catch (error: any) {
-         if (error.toString().includes('403')) {
-           toastAlerta('O token expirou, favor logar novamente','info')
-           handleLogout()
-         } else {
-          toastAlerta('Erro ao cadastrar a Categoria','erro')
-         }
+        if (error.toString().includes('403')) {
+          toastAlerta('O token expirou, favor logar novamente', 'info');
+          handleLogout();
+        } else {
+          toastAlerta('Erro ao cadastrar a Categoria', 'erro');
+        }
       }
     }
 
-    retornar()
+    retornar();
   }
 
   function retornar() {
-    navigate("/categorias")
+    navigate('/categorias');
   }
 
   useEffect(() => {
     if (token === '') {
-      toastAlerta('Você precisa estar logado','info');
+      toastAlerta('Você precisa estar logado', 'info');
       navigate('/login');
     }
   }, [token]);
 
   return (
-    <div className="container flex flex-col items-center justify-center mx-auto">
-      <h1 className="text-4xl text-center my-8">
+    <div className="container flex flex-col items-center justify-center mx-auto p-4">
+      <h1 className="text-4xl text-center my-8 font-bold">
         {id === undefined ? 'Cadastre uma nova categoria' : 'Editar categoria'}
       </h1>
 
-      <form className="w-1/2 flex flex-col gap-4" onSubmit={gerarNovaCategoria}>
-        <div className="flex flex-col gap-2">
-          <label htmlFor="nome">Nome da categoria</label>
+      <form className="w-full max-w-lg bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" onSubmit={gerarNovaCategoria}>
+        <div className="mb-4">
+          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="nome">
+            Nome da categoria
+          </label>
           <input
             type="text"
             placeholder="Nome"
-            name='nome'
-            className="border-2 border-slate-700 rounded p-2"
+            name="nome"
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             value={categoria.nome}
             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
           />
         </div>
-        <div className="flex flex-col gap-2">
-          <label htmlFor="descricao">Descrição da categoria</label>
+        <div className="mb-6">
+          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="descricao">
+            Descrição da categoria
+          </label>
           <input
             type="text"
             placeholder="Descrição"
-            name='descricao'
-            className="border-2 border-slate-700 rounded p-2"
+            name="descricao"
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             value={categoria.descricao}
             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
           />
         </div>
-        <button
-          className="rounded text-slate-100 bg-hoodaLaranja hover:bg-amber-400 w-1/2 py-2 mx-auto block"
-          type="submit"
-        >
-          {id === undefined ? 'Cadastrar' : 'Editar'}
-        </button>
+        <div className="flex items-center justify-between">
+          <button
+            className="bg-[#FEAE04] hover:bg-[#e69c03] text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            type="submit"
+          >
+            {id === undefined ? 'Cadastrar' : 'Editar'}
+          </button>
+        </div>
       </form>
     </div>
   );
