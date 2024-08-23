@@ -1,4 +1,3 @@
-
 import { GithubLogo, LinkedinLogo } from "@phosphor-icons/react";
 import { Link } from "react-router-dom";
 import './AboutUs.css'
