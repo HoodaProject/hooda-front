@@ -4,10 +4,6 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
 
 function Menu() {
-<<<<<<< HEAD
-
-=======
->>>>>>> 0b4a8dd7943fd68afb855fd97adc6628860e923f
   const { usuario, handleLogout } = useContext(AuthContext);
   const token = usuario.token;
 
