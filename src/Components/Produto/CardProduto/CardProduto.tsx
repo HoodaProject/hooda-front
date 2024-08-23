@@ -36,9 +36,6 @@ function CardProduto({ produto }: CardProdutoProps) {
           Estoque: {produto.estoque}
         </p>
         <p className="text-gray-600 text-sm font-normal opacity-75">
-          Preço: {produto.preco.toFixed(2)}
-        </p>
-        <p className="text-gray-600 text-sm font-normal opacity-75">
           Avaliação: {produto.avaliacao}
         </p>
 
