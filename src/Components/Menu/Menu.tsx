@@ -4,12 +4,18 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
 
 function Menu() {
-  const { usuario, handleLogout } = useContext(AuthContext);
+  const { usuario, handleLogout, adicionarProduto, removerProduto } = useContext(AuthContext);
   const token = usuario.token;
 
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleDropdown = () => setIsOpen(!isOpen);
+  const [notifications, setNotifications] = useState<number>(0);
+  
+  if(adicionarProduto){
+
+  }
+
   return (
     <>
       <nav className="bg-hoodaLaranja border-gray-200">
@@ -31,11 +37,21 @@ function Menu() {
             </button>
             <span className="sr-only">Open main menu
 
-              
+
             </span>
             <div>
               <Link to={"/cart"}>
-                <img src="https://i.imgur.com/pTCHwra.png" className="h-4 mr- sm:h-6 m-3" alt="Logo Carrinho" />
+                <div className="relative inline-block">
+                  <img src="https://i.imgur.com/pTCHwra.png" className="h-4 mr- sm:h-6 m-3" alt="Logo Carrinho" />
+                  
+
+                  {notifications > 0 && (
+                    <span className="absolute top-4 right-[-0.5rem] -translate-x-1/2 -translate-y-1/2 bg-white text-hoodaLaranja text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                      {notifications}
+                    </span>
+                  )}
+                </div>
+
               </Link>
             </div>
           </div>
